@@ -429,7 +429,9 @@
       var code = String(list[i]).toLowerCase().split('-')[0];
       if (LANGS.indexOf(code) >= 0) return code;
     }
-    return 'ko';
+    // 지원하지 않는 언어(대만·태국·베트남 등)는 영어로 떨어진다 —
+    // 한국어로 두면 읽을 수 없는 화면을 보게 된다.
+    return 'en';
   }
 
   function apply(lang) {
